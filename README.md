@@ -1,10 +1,12 @@
 statements
 ==========
 
-Isn't it a pain to write SQL statements in JavaScript? Meet `statements`. An elegantly simple SQL statement utilty for Node.js. It works by letting your write SQL in a raw file. You then delimit each statement with a simple comment.  `statements` will use the contents of that comment as the key for the statement.
+Meet `statements`. An elegantly simple SQL statement utilty for Node.js. 
+
+`statements` lets you write SQL in a raw file. You simply delimit each SQL statement with a comment.  `statements` will use the contents of that comment as the object key.
 
 ##Getting started
-```
+```sql
 npm install statements
 ```
 
@@ -20,7 +22,7 @@ CREATE TABLE environment (
 SELECT environment where idenvironment = $id;
 ```
 
-```
+```javascript
 // load the module
 var statements = require('statements');
 
