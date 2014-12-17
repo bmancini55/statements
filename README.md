@@ -6,11 +6,14 @@ Meet `statements`. An elegantly simple SQL statement utilty for Node.js.
 `statements` lets you write SQL in a raw file. You simply delimit each SQL statement with a comment.  `statements` will use the contents of that comment as the object key.
 
 ##Getting started
-```sql
+
+Import the module into your project.
+```
 npm install statements
 ```
 
-```
+Create a file with SQL statements where each statement has a comment block at the beginning.
+```sql
 -- createTable
 CREATE TABLE environment (
   idenvironment INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -22,6 +25,7 @@ CREATE TABLE environment (
 SELECT environment where idenvironment = $id;
 ```
 
+Read the SQL file and use the statements in code!
 ```javascript
 // load the module
 var statements = require('statements');
@@ -31,7 +35,7 @@ var sql = statements.read('environments.sql');
 
 // do something with the values
 db.run(sql.createTable);
-db.run(sql.selectById);
+db.all(sql.selectById);
 ```
 
 ##Options
