@@ -22,7 +22,9 @@ CREATE TABLE environment (
 );
 
 -- selectById
-SELECT environment where idenvironment = $id;
+SELECT idenvironment, name, description 
+FROM environment 
+WHERE idenvironment = $id;
 ```
 
 Read the SQL file and use the statements in code!
@@ -35,7 +37,7 @@ var sql = statements.read('environments.sql');
 
 // do something with the values
 db.run(sql.createTable);
-db.all(sql.selectById);
+db.get(sql.selectById, { $id: 1 });
 ```
 
 ##Options
